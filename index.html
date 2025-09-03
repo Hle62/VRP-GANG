@@ -36,7 +36,7 @@
             padding-top: 20px;
         }
 
-        /* ネオンラインのスタイル */
+        /* サイト全体のネオン装飾ライン */
         .neon-line {
             height: 2px;
             background-color: var(--neon-green);
@@ -49,7 +49,12 @@
             height: 2px;
             background-color: var(--neon-green);
             box-shadow: 0 0 5px var(--neon-green);
-            margin: 10px 0 20px 0;
+            margin: 10px 0 20px 0; /* 見出しの下に適切な余白を確保 */
+        }
+
+        /* crime-item h3 の直下のセクションデバイダ用調整 */
+        .crime-item .section-divider {
+            margin: 5px 0 10px 0; /* 犯罪名と線の間隔を調整 */
         }
         
         .tabs {
@@ -107,12 +112,11 @@
         }
         .crime-item h3 {
             margin-top: 0;
-            margin-bottom: 5px; /* テキストと線の間を狭める */
+            margin-bottom: 0; /* 線の直前に余白ができないように調整 */
             color: var(--text-color);
             font-size: 20px;
-            border-bottom: 2px solid var(--neon-green); /* 発光する下線を追加 */
-            padding-bottom: 5px;
-            box-shadow: 0 2px 5px var(--neon-green); /* 発光効果を追加 */
+            /* border-bottom と box-shadow は section-divider に移す */
+            padding-bottom: 0; 
         }
         .info-item h3 {
             margin-top: 0;
@@ -136,12 +140,11 @@
         }
         .info-section h3 {
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 0; /* section-divider のために余白を調整 */
             color: var(--text-color);
             font-size: 20px;
-            border-bottom: 2px solid var(--neon-green);
+            border-bottom: none; /* 下線を削除 */
             padding-bottom: 5px;
-            box-shadow: 0 2px 5px var(--neon-green);
         }
         .info-section ul {
             list-style-type: disc;
@@ -244,7 +247,8 @@
         </div>
         
         <div id="tab2" class="tab-content">
-            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; box-shadow: 0 2px 5px var(--neon-green);">麻薬精製所</h2>
+            <h2 style="text-align: left; color: var(--text-color);">麻薬精製所</h2>
+            <div class="section-divider"></div>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('1.png')">
                     <img src="1.png" alt="7303番地 地下">
@@ -264,7 +268,8 @@
                 </div>
             </div>
             
-            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; margin-top: 40px; box-shadow: 0 2px 5px var(--neon-green);">花</h2>
+            <h2 style="text-align: left; color: var(--text-color); margin-top: 40px;">花</h2>
+            <div class="section-divider"></div>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('5.png')">
                     <img src="5.png" alt="[Xeleonica青] 5042番地 右の山頂">
@@ -302,55 +307,67 @@
             <ul class="crime-list">
                 <li class="crime-item">
                     <h3>ATM強盗</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: ロープ</p>
                 </li>
                 <li class="crime-item">
                     <h3>店舗強盗</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: ピストル・人質</p>
                 </li>
                 <li class="crime-item">
                     <h3>宝石強盗</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: ピストル・人質</p>
                 </li>
                 <li class="crime-item">
                     <h3>武器屋強盗</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バッグ・ピストル・人質・ボルトカッター・バール・ハックUSB（紫色）</p>
                 </li>
                 <li class="crime-item">
                     <h3>フリーカ強盗</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バッグ・ドリルx5・ビッグドリルx1・テルミットx1・人質・ハックUSB(有無どちらでも)</p>
                 </li>
                 <li class="crime-item">
                     <h3>ヴァンジェリコ</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: ヴァンジェリコキー・ピストル・ 犯罪用バッグ・ボトルカッター・クラックキット</p>
                 </li>
                 <li class="crime-item">
                     <h3>客船</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バック・銃</p>
                     <p class="location">受注場所: 7158</p>
                 </li>
                 <li class="crime-item">
                     <h3>飛行場襲撃</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バッグ・銃</p>
                     <p class="location">受注場所: 8006</p>
                 </li>
                 <li class="crime-item">
                     <h3>オイルリグ</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バッグ・銃</p>
                     <p class="location">受注場所: 不明</p>
                 </li>
                 <li class="crime-item">
                     <h3>ユニオン</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バッグ・銃・テルミット</p>
                     <p class="location">受注場所: 8175右下の橋下</p>
                 </li>
                 <li class="crime-item">
                     <h3>アーティファクト</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バッグ・ハックUSB（紫色）・銃・ボルトカッター</p>
                     <p class="location">受注場所: 9015右上</p>
                 </li>
                 <li class="crime-item">
                     <h3>アンダーグラウンド</h3>
+                    <div class="section-divider"></div>
                     <p>必要道具: 不明</p>
                     <p class="location">受注場所: 7281右橋下</p>
                 </li>
@@ -363,6 +380,7 @@
             </div>
             <div class="info-section">
                 <h3>ギャング設立条件</h3>
+                <div class="section-divider"></div>
                 <ul>
                     <li>最低人数7人</li>
                     <li>資金1億</li>
@@ -377,6 +395,7 @@
             
             <div class="info-section">
                 <h3>車両の窃盗場所</h3>
+                <div class="section-divider"></div>
                 <ul>
                     <li>車: カジノ前</li>
                     <li>ヘリ: 10098番地先端</li>
@@ -424,8 +443,9 @@
             const items = document.querySelectorAll('#tab5 .crime-item');
             
             items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(input)) {
+                const textContent = item.textContent.toLowerCase();
+                const crimeTitle = item.querySelector('h3').textContent.toLowerCase();
+                if (crimeTitle.includes(input) || textContent.includes(input)) {
                     item.style.display = '';
                 } else {
                     item.style.display = 'none';
@@ -438,8 +458,9 @@
             const sections = document.querySelectorAll('#tab6 .info-section');
             
             sections.forEach(section => {
-                const text = section.textContent.toLowerCase();
-                if (text.includes(input)) {
+                const textContent = section.textContent.toLowerCase();
+                const sectionTitle = section.querySelector('h3').textContent.toLowerCase();
+                if (sectionTitle.includes(input) || textContent.includes(input)) {
                     section.style.display = 'block';
                 } else {
                     section.style.display = 'none';
