@@ -5,30 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>犯罪情報</title>
     <style>
+        :root {
+            --dark-background: #121212;
+            --card-background: #1e1e1e;
+            --text-color: #e0e0e0;
+            --neon-green: #39ff14;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--dark-background);
+            color: var(--text-color);
         }
         .container {
             max-width: 1200px;
             margin: auto;
-            background: #fff;
+            background: var(--card-background);
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
             min-height: 80vh;
+            border-radius: 10px;
         }
         h1 {
             text-align: center;
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
         }
         .tabs {
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
             gap: 10px;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 2px solid #333;
         }
         .tab-button {
             padding: 10px 20px;
@@ -36,13 +46,13 @@
             border: none;
             background-color: transparent;
             font-size: 16px;
-            color: #555;
+            color: var(--text-color);
             transition: color 0.3s, border-bottom 0.3s;
         }
         .tab-button.active {
-            color: #0056b3;
+            color: var(--neon-green);
             font-weight: bold;
-            border-bottom: 2px solid #0056b3;
+            border-bottom: 2px solid var(--neon-green);
         }
         .tab-content {
             display: none;
@@ -59,7 +69,9 @@
             width: 80%;
             padding: 10px;
             font-size: 16px;
-            border: 1px solid #ccc;
+            border: 1px solid #555;
+            background-color: #333;
+            color: var(--text-color);
             border-radius: 5px;
         }
         .crime-list, .info-list {
@@ -68,16 +80,16 @@
             margin: 0;
         }
         .crime-item, .info-item {
-            border: 1px solid #ddd;
+            border: 1px solid #333;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
-            background-color: #fafafa;
+            background-color: var(--card-background);
         }
         .crime-item h3, .info-item h3 {
             margin-top: 0;
             margin-bottom: 10px;
-            color: #0056b3;
+            color: var(--neon-green);
             font-size: 20px;
         }
         .crime-item p, .info-item p {
@@ -88,18 +100,18 @@
             font-weight: bold;
         }
         .info-section {
-            border: 1px solid #ddd;
+            border: 1px solid #333;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
-            background-color: #fafafa;
+            background-color: var(--card-background);
         }
         .info-section h3 {
             margin-top: 0;
             margin-bottom: 15px;
-            color: #0056b3;
+            color: var(--neon-green);
             font-size: 20px;
-            border-bottom: 2px solid #0056b3;
+            border-bottom: 2px solid var(--neon-green);
             padding-bottom: 5px;
         }
         .info-section ul {
@@ -116,10 +128,10 @@
             gap: 20px;
         }
         .item-card {
-            border: 1px solid #ddd;
+            border: 1px solid #333;
             padding: 15px;
             border-radius: 8px;
-            background-color: #fafafa;
+            background-color: var(--card-background);
             text-align: center;
             cursor: pointer;
         }
@@ -127,7 +139,7 @@
             font-size: 16px;
             margin-top: 10px;
             margin-bottom: 0;
-            color: #0056b3;
+            color: var(--neon-green);
         }
         .item-card img {
             width: 200px;
@@ -142,7 +154,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             display: none;
             justify-content: center;
             align-items: center;
@@ -154,7 +166,8 @@
         .overlay-image {
             max-width: 90%;
             max-height: 90%;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 20px var(--neon-green);
+            border: 2px solid var(--neon-green);
         }
     </style>
 </head>
@@ -201,7 +214,7 @@
         </div>
         
         <div id="tab2" class="tab-content">
-            <h2 style="text-align: left; color: #444; border-bottom: 2px solid #ccc; padding-bottom: 5px;">麻薬精製所</h2>
+            <h2 style="text-align: left; color: var(--neon-green); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; text-shadow: none;">麻薬精製所</h2>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('1.png')">
                     <img src="1.png" alt="7303番地 地下">
@@ -221,7 +234,7 @@
                 </div>
             </div>
             
-            <h2 style="text-align: left; color: #444; border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-top: 40px;">花</h2>
+            <h2 style="text-align: left; color: var(--neon-green); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; margin-top: 40px; text-shadow: none;">花</h2>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('5.png')">
                     <img src="5.png" alt="[Xeleonica青] 5042番地 右の山頂">
@@ -254,7 +267,7 @@
 
         <div id="tab5" class="tab-content">
             <div class="search-container">
-                <input type="text" id="crimeSearch" class="search-input" placeholder="犯罪名や道具で検索..." onkeyup="searchCrime('tab5')">
+                <input type="text" id="crimeSearch" class="search-input" placeholder="犯罪名や道具で検索..." onkeyup="searchCrime()">
             </div>
             <ul class="crime-list">
                 <li class="crime-item">
@@ -316,7 +329,7 @@
 
         <div id="tab6" class="tab-content">
             <div class="search-container">
-                <input type="text" id="infoSearch" class="search-input" placeholder="項目名で検索..." onkeyup="searchInfo('tab6')">
+                <input type="text" id="infoSearch" class="search-input" placeholder="項目名で検索..." onkeyup="searchInfo()">
             </div>
             <div class="info-section">
                 <h3>ギャング設立条件</h3>
@@ -378,7 +391,7 @@
         
         function searchCrime() {
             const input = document.getElementById('crimeSearch').value.toLowerCase();
-            const items = document.querySelectorAll('.crime-item');
+            const items = document.querySelectorAll('#tab5 .crime-item');
             
             items.forEach(item => {
                 const text = item.textContent.toLowerCase();
@@ -392,7 +405,7 @@
         
         function searchInfo() {
             const input = document.getElementById('infoSearch').value.toLowerCase();
-            const sections = document.querySelectorAll('.info-section');
+            const sections = document.querySelectorAll('#tab6 .info-section');
             
             sections.forEach(section => {
                 const text = section.textContent.toLowerCase();
