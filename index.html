@@ -59,29 +59,29 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .crime-list, .info-list {
+        .crime-list, .info-list { /* info-list もここでスタイル定義 */
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .crime-item, .info-item {
+        .crime-item, .info-item { /* info-item もここでスタイル定義 */
             border: 1px solid #ddd;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
             background-color: #fafafa;
         }
-        .crime-item h3, .info-item h3 {
+        .crime-item h3, .info-item h3 { /* info-item h3 もここでスタイル定義 */
             margin-top: 0;
             margin-bottom: 10px;
             color: #0056b3;
             font-size: 20px;
         }
-        .crime-item p, .info-item p {
+        .crime-item p, .info-item p { /* info-item p もここでスタイル定義 */
             margin: 0;
             font-size: 16px;
         }
-        .crime-item p.location, .info-item p.location {
+        .crime-item p.location, .info-item p.location { /* info-item p.location もここでスタイル定義 */
             font-weight: bold;
         }
         .info-section {
@@ -317,30 +317,23 @@
             </div>
             <div class="info-section">
                 <h3>ギャング設立条件</h3>
-                <ul class="info-list">
-                    <li class="info-item">
+                <ul>
+                    <li>最低人数7人</li>
+                    <li>資金1億</li>
+                    <li>設立チケット10枚
                         <ul>
-                            <li>最低人数7人</li>
-                            <li>資金1億</li>
-                            <li>設立チケット10枚
-                                <ul>
-                                    <li>帳簿報酬</li>
-                                    <li>犯罪でも出るかも？(未確認)</li>
-                                </ul>
-                            </li>
+                            <li>帳報酬</li>
+                            <li>犯罪でも出るかも？(未確認)</li>
                         </ul>
                     </li>
                 </ul>
             </div>
+            
             <div class="info-section">
                 <h3>車両の窃盗場所</h3>
-                <ul class="info-list">
-                    <li class="info-item">
-                        <ul>
-                            <li>車: カジノ前</li>
-                            <li>ヘリ: 10098番地先端</li>
-                        </ul>
-                    </li>
+                <ul>
+                    <li>車: カジノ前</li>
+                    <li>ヘリ: 10098番地先端</li>
                 </ul>
             </div>
         </div>
