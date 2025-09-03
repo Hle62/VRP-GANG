@@ -76,7 +76,7 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 10px; /* PC版とスマホ版の共通設定 */
+            margin-bottom: 10px; /* PCでのタブ下の余白を修正 */
             gap: 10px;
             border-bottom: 2px solid #333;
             flex-wrap: wrap;
@@ -97,7 +97,7 @@
         }
         .tab-content {
             display: none;
-            padding-top: 10px; /* PC版とスマホ版の共通設定 */
+            padding-top: 10px; /* コンテンツの上の余白を修正 */
         }
         .tab-content.active {
             display: block;
@@ -244,11 +244,16 @@
                 flex-wrap: wrap;
                 justify-content: flex-start;
                 gap: 5px;
+                margin-bottom: 10px; /* PC版と同様に余白を設定 */
             }
             .tab-button {
                 padding: 8px 12px;
                 font-size: 14px;
             }
+            .tab-content {
+                padding-top: 10px; /* PC版と同様に余白を設定 */
+            }
+
             /* スマホで花＆麻薬精製所だけ余白を狭く */
             #tab2 {
                 padding-top: 0;
