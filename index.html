@@ -44,6 +44,7 @@
             color: var(--text-color);
             margin: 0;
             font-size: 2em;
+            padding-left: 60px; /* ロゴの幅と余白を考慮して調整 */
         }
         #logo-title {
             position: absolute;
@@ -78,7 +79,7 @@
             margin-bottom: 20px;
             gap: 10px;
             border-bottom: 2px solid #333;
-            flex-wrap: wrap; /* スマホでタブが複数行になるように */
+            flex-wrap: wrap;
         }
         .tab-button {
             padding: 10px 20px;
@@ -223,24 +224,26 @@
                 padding: 10px;
             }
             .header-title-container {
-                flex-direction: column; /* ロゴとタイトルを縦並びにする */
-                align-items: center;
+                /* flex-direction: column; を削除 */
+                justify-content: center; /* タイトル全体を中央に */
                 padding-top: 10px;
                 padding-bottom: 10px;
+                flex-wrap: wrap; /* 必要に応じて改行を許可 */
             }
             #logo-title {
                 position: static; /* 絶対位置指定を解除 */
-                max-height: 3em; /* ロゴサイズを小さく */
-                transform: none; /* 垂直方向中央寄せを解除 */
+                max-height: 3em;
+                transform: none;
                 padding-left: 0;
-                margin-bottom: 10px;
+                margin-right: 10px; /* タイトルとの間隔 */
             }
             .header-title-container h1 {
-                font-size: 1.5em; /* タイトル文字を小さく */
+                font-size: 1.5em;
+                padding-left: 0; /* PC版のpadding-leftをリセット */
             }
             .tabs {
                 flex-wrap: wrap;
-                justify-content: flex-start; /* 左寄せに */
+                justify-content: flex-start;
                 gap: 5px;
             }
             .tab-button {
@@ -248,11 +251,11 @@
                 font-size: 14px;
             }
             .grid-container {
-                grid-template-columns: repeat(2, 1fr); /* 2列に */
+                grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
             .item-card img {
-                width: 100%; /* 親要素いっぱいに広げる */
+                width: 100%;
                 max-width: 150px;
             }
         }
