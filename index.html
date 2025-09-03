@@ -59,35 +59,54 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
-        /* 犯罪別詳細ページのスタイル */
-        .crime-list {
+        .crime-list, .info-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .crime-item {
+        .crime-item, .info-item {
             border: 1px solid #ddd;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
             background-color: #fafafa;
         }
-        .crime-item h3 {
+        .crime-item h3, .info-item h3 {
             margin-top: 0;
             margin-bottom: 10px;
             color: #0056b3;
             font-size: 20px;
         }
-        .crime-item p {
+        .crime-item p, .info-item p {
             margin: 0;
             font-size: 16px;
         }
-        .crime-item p.location {
+        .crime-item p.location, .info-item p.location {
             font-weight: bold;
         }
-
-        /* 既存のスタイルはそのまま */
+        .info-section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .info-section h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #0056b3;
+            font-size: 20px;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+        }
+        .info-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+        .info-section li {
+            margin-bottom: 10px;
+        }
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -138,7 +157,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>武器クラフトレシピ一覧</h1>
+        <h1>犯罪情報</h1>
         
         <div class="tabs">
             <button class="tab-button active" onclick="showTab('tab1')">クラフト台</button>
@@ -146,10 +165,7 @@
             <button class="tab-button" onclick="showTab('tab3')">ブラックマーケット</button>
             <button class="tab-button" onclick="showTab('tab4')">資金洗浄</button>
             <button class="tab-button" onclick="showTab('tab5')">犯罪別詳細</button>
-        </div>
-
-        <div class="search-container">
-            <input type="text" id="crimeSearch" class="search-input" placeholder="犯罪名や道具で検索..." onkeyup="searchCrime()">
+            <button class="tab-button" onclick="showTab('tab6')">その他情報</button>
         </div>
         
         <div id="tab1" class="tab-content active">
@@ -234,6 +250,9 @@
         </div>
 
         <div id="tab5" class="tab-content">
+            <div class="search-container">
+                <input type="text" id="crimeSearch" class="search-input" placeholder="犯罪名や道具で検索..." onkeyup="searchCrime('tab5')">
+            </div>
             <ul class="crime-list">
                 <li class="crime-item">
                     <h3>ATM強盗</h3>
@@ -291,6 +310,40 @@
                 </li>
             </ul>
         </div>
+
+        <div id="tab6" class="tab-content">
+            <div class="search-container">
+                <input type="text" id="infoSearch" class="search-input" placeholder="項目名で検索..." onkeyup="searchInfo('tab6')">
+            </div>
+            <div class="info-section">
+                <h3>ギャング設立条件</h3>
+                <ul class="info-list">
+                    <li class="info-item">
+                        <ul>
+                            <li>最低人数7人</li>
+                            <li>資金1億</li>
+                            <li>設立チケット10枚
+                                <ul>
+                                    <li>帳簿報酬</li>
+                                    <li>犯罪でも出るかも？(未確認)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-section">
+                <h3>車両の窃盗場所</h3>
+                <ul class="info-list">
+                    <li class="info-item">
+                        <ul>
+                            <li>車: カジノ前</li>
+                            <li>ヘリ: 10098番地先端</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div id="overlay" class="overlay" onclick="hideImage()">
@@ -327,9 +380,10 @@
             }
         }
         
-        function searchCrime() {
+        // 犯罪別詳細用の検索関数
+        function searchCrime(tabId) {
             const input = document.getElementById('crimeSearch').value.toLowerCase();
-            const items = document.querySelectorAll('.crime-item');
+            const items = document.querySelectorAll('#' + tabId + ' .crime-item');
             
             items.forEach(item => {
                 const text = item.textContent.toLowerCase();
@@ -337,6 +391,21 @@
                     item.style.display = '';
                 } else {
                     item.style.display = 'none';
+                }
+            });
+        }
+        
+        // その他情報用の検索関数
+        function searchInfo(tabId) {
+            const input = document.getElementById('infoSearch').value.toLowerCase();
+            const sections = document.querySelectorAll('#' + tabId + ' .info-section');
+            
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
                 }
             });
         }
