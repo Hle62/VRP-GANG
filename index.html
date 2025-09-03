@@ -76,7 +76,7 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 5px; /* PCでのタブ下の余白をさらに狭く */
+            margin-bottom: 20px; /* PCでのデフォルト余白 */
             gap: 10px;
             border-bottom: 2px solid #333;
             flex-wrap: wrap;
@@ -97,11 +97,17 @@
         }
         .tab-content {
             display: none;
-            padding-top: 5px; /* コンテンツの上の余白をさらに狭く */
+            padding-top: 20px; /* PCでのデフォルト余白 */
         }
         .tab-content.active {
             display: block;
         }
+
+        /* PCでの花＆麻薬精製所タブの余白を狭く */
+        #tab2.active {
+            padding-top: 5px;
+        }
+        
         .search-container {
             margin-bottom: 20px;
             text-align: center;
@@ -244,18 +250,18 @@
                 flex-wrap: wrap;
                 justify-content: flex-start;
                 gap: 5px;
-                margin-bottom: 10px;
+                margin-bottom: 10px; /* スマホでの余白 */
             }
             .tab-button {
                 padding: 8px 12px;
                 font-size: 14px;
             }
             .tab-content {
-                padding-top: 10px;
+                padding-top: 10px; /* スマホでの余白 */
             }
 
             /* スマホで花＆麻薬精製所だけ余白を狭く */
-            #tab2 {
+            #tab2.active {
                 padding-top: 0;
             }
             #tab2 h2:last-of-type {
