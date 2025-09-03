@@ -29,7 +29,7 @@
             border-radius: 10px;
             overflow: hidden;
         }
-
+        
         /* タイトルとロゴのコンテナ */
         .header-title-container {
             display: flex;
@@ -96,16 +96,14 @@
             border-bottom: 2px solid var(--neon-green);
         }
         .tab-content {
-            /* display: none; を削除 */
+            display: none;
             padding-top: 20px; /* PCでのデフォルト余白 */
             opacity: 0;
-            visibility: hidden; /* 非表示時に要素を隠す */
             transition: opacity 0.5s ease-in-out;
         }
         .tab-content.active {
             display: block;
             opacity: 1;
-            visibility: visible; /* 表示時に要素を見せる */
         }
 
         /* PCでの花＆麻薬精製所タブの余白を狭く */
@@ -512,23 +510,27 @@
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
             
-            // 現在のタブを非表示にする
+            // 現在アクティブなタブを非表示にし、opacityを0にする
             const currentActiveContent = document.querySelector('.tab-content.active');
             if (currentActiveContent) {
                 currentActiveContent.classList.remove('active');
             }
             
-            // 新しいタブとコンテンツをアクティブにする
+            // すべてのタブボタンのactiveクラスを削除
+            tabButtons.forEach(button => button.classList.remove('active'));
+
             const selectedButton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
             const selectedContent = document.getElementById(tabId);
             
             if (selectedButton && selectedContent) {
+                // 新しいタブボタンをアクティブにする
                 selectedButton.classList.add('active');
                 
-                // フェードインのために少し遅延させる
+                // 新しいタブコンテンツを表示し、フェードイン
+                selectedContent.style.display = 'block';
                 setTimeout(() => {
                     selectedContent.classList.add('active');
-                }, 50); // 50msの遅延
+                }, 50); // 50msの遅延でopacityを1にする
             }
         }
         
