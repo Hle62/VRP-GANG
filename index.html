@@ -48,40 +48,7 @@
         .tab-content.active {
             display: block;
         }
-
-        /* ブラックマーケット用のスタイル */
-        .single-item-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 40px;
-        }
-        .single-item-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #fafafa;
-            text-align: center;
-            cursor: pointer;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .single-item-card img {
-            max-width: 600px;
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 4px;
-        }
-        .single-item-card h2 {
-            font-size: 20px;
-            margin-top: 20px;
-            margin-bottom: 0;
-            color: #0056b3;
-        }
-        
-        /* 以下は既存のCSS */
+        /* --- ここから修正なし --- */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -206,8 +173,8 @@
         </div>
 
         <div id="tab3" class="tab-content">
-            <div class="single-item-container">
-                <div class="single-item-card" onclick="showImage('13.png')">
+            <div class="grid-container" style="justify-content: center; grid-template-columns: repeat(1, 240px);">
+                <div class="item-card" onclick="showImage('13.png')">
                     <img src="13.png" alt="5010番地 トンネル扉中">
                     <h2>5010番地 トンネル扉中</h2>
                 </div>
