@@ -29,14 +29,37 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        h1 {
-            text-align: center;
-            color: var(--text-color);
-            margin-top: 0;
+
+        /* タイトルとロゴのコンテナ */
+        .header-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* タイトルを中央に配置 */
+            position: relative; /* 子要素の絶対配置の基準 */
             padding-top: 20px;
+            padding-bottom: 20px; /* 必要に応じて調整 */
         }
 
-        /* サイト全体のネオン装飾ライン */
+        .header-title-container h1 {
+            text-align: center; /* h1自体のテキスト中央寄せ */
+            color: var(--text-color);
+            margin: 0; /* 親要素で余白を調整するため */
+            font-size: 3em; /* タイトル文字のサイズ */
+        }
+
+        #logo-title {
+            position: absolute;
+            left: 0; /* 親コンテナの左端 */
+            height: 100%; /* 親コンテナの高さに合わせる */
+            max-height: 3em; /* h1のfont-sizeに合わせることで高さが揃う */
+            width: auto; /* アスペクト比を維持 */
+            object-fit: contain; /* 画像全体を表示 */
+            top: 50%;
+            transform: translateY(-50%); /* 垂直方向中央寄せ */
+            padding-left: 20px; /* コンテナの端からの余白 */
+        }
+        
+        /* ネオンラインのスタイル */
         .neon-line {
             height: 2px;
             background-color: var(--neon-green);
@@ -199,7 +222,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>VRP S2 犯罪情報</h1>
+        <div class="header-title-container">
+            <img id="logo-title" src="ChloroCircus-rogo.png" alt="ChloroCircus Logo">
+            <h1>VRP S2 犯罪情報</h1>
+        </div>
         <div class="neon-line"></div>
         
         <div class="tabs">
