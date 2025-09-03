@@ -44,14 +44,14 @@
             text-align: center; /* h1自体のテキスト中央寄せ */
             color: var(--text-color);
             margin: 0; /* 親要素で余白を調整するため */
-            font-size: 3em; /* タイトル文字のサイズ */
+            font-size: 2.5em; /* タイトル文字のサイズを小さく */
         }
 
         #logo-title {
             position: absolute;
             left: 0; /* 親コンテナの左端 */
-            height: 100%; /* 親コンテナの高さに合わせる */
-            max-height: 3em; /* h1のfont-sizeに合わせることで高さが揃う */
+            /* height: 100%; */ /* 親コンテナの高さに合わせるのを削除 */
+            max-height: 4em; /* ロゴのサイズを大きく */
             width: auto; /* アスペクト比を維持 */
             object-fit: contain; /* 画像全体を表示 */
             top: 50%;
