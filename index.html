@@ -76,7 +76,7 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 5px;
+            margin-bottom: 20px; /* ここを修正 */
             gap: 10px;
             border-bottom: 2px solid #333;
             flex-wrap: wrap;
@@ -97,7 +97,7 @@
         }
         .tab-content {
             display: none;
-            padding-top: 5px;
+            padding-top: 20px; /* ここを修正 */
         }
         .tab-content.active {
             display: block;
@@ -244,19 +244,24 @@
                 flex-wrap: wrap;
                 justify-content: flex-start;
                 gap: 5px;
-                margin-bottom: 0; /* タブの下の余白をさらに狭く */
+                margin-bottom: 10px; /* PC版と同様に余白を設定 */
             }
             .tab-button {
                 padding: 8px 12px;
                 font-size: 14px;
             }
             .tab-content {
-                padding-top: 0; /* コンテンツの上の余白をさらに狭く */
+                padding-top: 10px; /* PC版と同様に余白を設定 */
             }
-            /* 花の見出しの上の余白を調整 */
+
+            /* 花＆麻薬精製所タブ専用のスタイル */
+            #tab2 {
+                padding-top: 0;
+            }
             #tab2 h2:last-of-type {
                 margin-top: 10px !important;
             }
+            
             .grid-container {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
