@@ -48,7 +48,35 @@
         .tab-content.active {
             display: block;
         }
-        /* --- ここから修正なし --- */
+        
+        /* 犯罪別詳細ページのスタイル */
+        .crime-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .crime-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .crime-item h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #0056b3;
+            font-size: 20px;
+        }
+        .crime-item p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .crime-item p.location {
+            font-weight: bold;
+        }
+
+        /* 既存のスタイルはそのまま */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -191,7 +219,63 @@
         </div>
 
         <div id="tab5" class="tab-content">
-            </div>
+            <ul class="crime-list">
+                <li class="crime-item">
+                    <h3>ATM強盗</h3>
+                    <p>必要な道具: ロープ</p>
+                </li>
+                <li class="crime-item">
+                    <h3>店舗強盗</h3>
+                    <p>必要な道具: ピストル・人質</p>
+                </li>
+                <li class="crime-item">
+                    <h3>宝石強盗</h3>
+                    <p>必要な道具: ピストル・人質</p>
+                </li>
+                <li class="crime-item">
+                    <h3>武器屋強盗</h3>
+                    <p>必要な道具: 犯罪用バッグ・ピストル・人質・ボルトカッター・バール・ハックUSB（紫色）</p>
+                </li>
+                <li class="crime-item">
+                    <h3>フリーカ強盗</h3>
+                    <p>必要な道具: 犯罪用バッグ・ドリルx5・ビッグドリルx1・テルミットx1・人質・ハックUSB(有無どちらでも)</p>
+                </li>
+                <li class="crime-item">
+                    <h3>ヴァンジェリコ</h3>
+                    <p>必要な道具: ヴァンジェリコキー・ピストル・ 犯罪用バッグ・ボトルカッター・クラックキット</p>
+                </li>
+                <li class="crime-item">
+                    <h3>客船</h3>
+                    <p>必要な道具: 犯罪用バック・銃</p>
+                    <p class="location">受注場所: 7158</p>
+                </li>
+                <li class="crime-item">
+                    <h3>飛行場襲撃</h3>
+                    <p>必要な道具: 犯罪用バッグ・銃</p>
+                    <p class="location">受注場所: 8006</p>
+                </li>
+                <li class="crime-item">
+                    <h3>オイルリグ</h3>
+                    <p>必要な道具: 犯罪用バッグ・銃</p>
+                    <p class="location">受注場所: 不明</p>
+                </li>
+                <li class="crime-item">
+                    <h3>ユニオン</h3>
+                    <p>必要な道具: 犯罪用バッグ・銃・テルミット</p>
+                    <p class="location">受注場所: 8175右下の橋下</p>
+                </li>
+                <li class="crime-item">
+                    <h3>アーティファクト</h3>
+                    <p>必要な道具: 犯罪用バッグ・ハックUSB（紫色）・銃・ボルトカッター</p>
+                    <p class="location">受注場所: 9015右上</p>
+                </li>
+                <li class="crime-item">
+                    <h3>アンダーグラウンド</h3>
+                    <p>必要な道具: 不明</p>
+                    <p class="location">受注場所: 7281右橋下</p>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div id="overlay" class="overlay" onclick="hideImage()">
