@@ -76,7 +76,7 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 10px; /* タブの下の余白を修正 */
+            margin-bottom: 5px; /* ここを修正 */
             gap: 10px;
             border-bottom: 2px solid #333;
             flex-wrap: wrap;
@@ -97,7 +97,7 @@
         }
         .tab-content {
             display: none;
-            padding-top: 10px; /* タブコンテンツの上の余白を修正 */
+            padding-top: 5px; /* ここを修正 */
         }
         .tab-content.active {
             display: block;
@@ -244,10 +244,14 @@
                 flex-wrap: wrap;
                 justify-content: flex-start;
                 gap: 5px;
+                margin-bottom: 5px; /* ここを修正 */
             }
             .tab-button {
                 padding: 8px 12px;
                 font-size: 14px;
+            }
+            .tab-content {
+                padding-top: 5px; /* ここを修正 */
             }
             .grid-container {
                 grid-template-columns: repeat(2, 1fr);
