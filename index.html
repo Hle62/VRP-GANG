@@ -36,12 +36,20 @@
             padding-top: 20px;
         }
 
-        /* ネオンラインのスタイル */
+        /* サイト全体のネオン装飾ライン */
         .neon-line {
             height: 2px;
             background-color: var(--neon-green);
             box-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
             margin: 20px 0;
+        }
+        
+        /* セクションごとのネオンライン */
+        .section-divider {
+            height: 2px;
+            background-color: var(--neon-green);
+            box-shadow: 0 0 5px var(--neon-green);
+            margin: 10px 0 20px 0;
         }
         
         .tabs {
@@ -122,7 +130,7 @@
             margin-bottom: 15px;
             color: var(--text-color);
             font-size: 20px;
-            border-bottom: 2px solid var(--neon-green);
+            border-bottom: none; /* 下線を削除 */
             padding-bottom: 5px;
         }
         .info-section ul {
@@ -226,7 +234,8 @@
         </div>
         
         <div id="tab2" class="tab-content">
-            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; box-shadow: 0 0 5px var(--neon-green);">麻薬精製所</h2>
+            <h2 style="text-align: left; color: var(--text-color);">麻薬精製所</h2>
+            <div class="section-divider"></div>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('1.png')">
                     <img src="1.png" alt="7303番地 地下">
@@ -246,7 +255,8 @@
                 </div>
             </div>
             
-            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; margin-top: 40px; box-shadow: 0 0 5px var(--neon-green);">花</h2>
+            <h2 style="text-align: left; color: var(--text-color); margin-top: 40px;">花</h2>
+            <div class="section-divider"></div>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('5.png')">
                     <img src="5.png" alt="[Xeleonica青] 5042番地 右の山頂">
@@ -345,6 +355,7 @@
             </div>
             <div class="info-section">
                 <h3>ギャング設立条件</h3>
+                <div class="section-divider"></div>
                 <ul>
                     <li>最低人数7人</li>
                     <li>資金1億</li>
@@ -359,6 +370,7 @@
             
             <div class="info-section">
                 <h3>車両の窃盗場所</h3>
+                <div class="section-divider"></div>
                 <ul>
                     <li>車: カジノ前</li>
                     <li>ヘリ: 10098番地先端</li>
