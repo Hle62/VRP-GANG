@@ -209,13 +209,17 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.9);
-            display: none;
+            display: flex; /* 初期値はflexにしておく */
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            opacity: 0; /* デフォルトで非表示 */
+            transition: opacity 0.3s ease-in-out; /* フェードアニメーション */
+            pointer-events: none; /* 非表示時はクリックイベントを無効に */
         }
         .overlay.visible {
-            display: flex;
+            opacity: 1; /* 表示時に完全に不透明 */
+            pointer-events: auto; /* 表示時にクリックイベントを有効に */
         }
         .overlay-image {
             max-width: 90%;
@@ -250,14 +254,14 @@
                 flex-wrap: wrap;
                 justify-content: flex-start;
                 gap: 5px;
-                margin-bottom: 10px; /* スマホでの余白 */
+                margin-bottom: 10px;
             }
             .tab-button {
                 padding: 8px 12px;
                 font-size: 14px;
             }
             .tab-content {
-                padding-top: 10px; /* スマホでの余白 */
+                padding-top: 10px;
             }
 
             /* スマホで花＆麻薬精製所だけ余白を狭く */
@@ -418,13 +422,13 @@
                     <h3>客船</h3>
                     <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バック・銃</p>
-                    <p class="location">受注場所: 7158番地</p>
+                    <p class="location">受注場所: 7158</p>
                 </li>
                 <li class="crime-item">
                     <h3>飛行場襲撃</h3>
                     <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バッグ・銃</p>
-                    <p class="location">受注場所: 8006番地</p>
+                    <p class="location">受注場所: 8006</p>
                 </li>
                 <li class="crime-item">
                     <h3>オイルリグ</h3>
@@ -436,19 +440,19 @@
                     <h3>ユニオン</h3>
                     <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バッグ・銃・テルミット</p>
-                    <p class="location">受注場所: 8175番地右下の橋下</p>
+                    <p class="location">受注場所: 8175右下の橋下</p>
                 </li>
                 <li class="crime-item">
                     <h3>アーティファクト</h3>
                     <div class="section-divider"></div>
                     <p>必要道具: 犯罪用バッグ・ハックUSB（紫色）・銃・ボルトカッター</p>
-                    <p class="location">受注場所: 9015番地右上</p>
+                    <p class="location">受注場所: 9015右上</p>
                 </li>
                 <li class="crime-item">
                     <h3>アンダーグラウンド</h3>
                     <div class="section-divider"></div>
                     <p>必要道具: 不明</p>
-                    <p class="location">受注場所: 7281番地右の橋下</p>
+                    <p class="location">受注場所: 7281右橋下</p>
                 </li>
             </ul>
         </div>
@@ -494,11 +498,13 @@
             
             enlargedImage.src = imageSrc;
             overlay.classList.add('visible');
+            // opacityが0から1に変化することでフェードイン
         }
 
         function hideImage() {
             const overlay = document.getElementById('overlay');
             overlay.classList.remove('visible');
+            // opacityが1から0に変化することでフェードアウト
         }
         
         function showTab(tabId) {
@@ -549,4 +555,3 @@
     </script>
 </body>
 </html>
-
