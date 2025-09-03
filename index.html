@@ -29,7 +29,7 @@
             border-radius: 10px;
             overflow: hidden;
         }
-
+        
         /* タイトルとロゴのコンテナ */
         .header-title-container {
             display: flex;
@@ -76,7 +76,7 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* PCでのデフォルト余白 */
             gap: 10px;
             border-bottom: 2px solid #333;
             flex-wrap: wrap;
@@ -95,25 +95,19 @@
             font-weight: bold;
             border-bottom: 2px solid var(--neon-green);
         }
-        
-        /* PCでの個別の余白設定 */
-        #tab1.active, #tab3.active, #tab4.active, #tab5.active, #tab6.active {
-            padding-top: 20px;
-        }
-        #tab2.active {
-            padding-top: 5px; /* 花＆麻薬精製所のみ狭く */
-        }
-        
         .tab-content {
             display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            padding-top: 20px; /* PCでのデフォルト余白 */
         }
         .tab-content.active {
             display: block;
-            opacity: 1;
         }
 
+        /* PCでの花＆麻薬精製所タブの余白を狭く */
+        #tab2.active {
+            padding-top: 5px;
+        }
+        
         .search-container {
             margin-bottom: 20px;
             text-align: center;
@@ -269,8 +263,6 @@
             .tab-content {
                 padding-top: 10px;
             }
-
-            /* スマホで花＆麻薬精製所だけ余白を狭く */
             #tab2.active {
                 padding-top: 0;
             }
@@ -515,18 +507,23 @@
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
             
-            // すべてのタブボタンとコンテンツを非アクティブ化
+            // 現在アクティブなタブを非表示にする
+            const currentActiveContent = document.querySelector('.tab-content.active');
+            if (currentActiveContent) {
+                currentActiveContent.classList.remove('active');
+            }
+            
+            // すべてのタブボタンのactiveクラスを削除
             tabButtons.forEach(button => button.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
 
-            // 新しいタブとコンテンツをアクティブ化
             const selectedButton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
             const selectedContent = document.getElementById(tabId);
             
             if (selectedButton && selectedContent) {
+                // 新しいタブボタンをアクティブにする
                 selectedButton.classList.add('active');
                 
-                // フェードインのためにクラスを付与
+                // 新しいタブコンテンツを表示し、フェードイン
                 selectedContent.classList.add('active');
             }
         }
