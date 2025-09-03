@@ -20,6 +20,9 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             min-height: 80vh;
         }
+        h1 {
+            text-align: center;
+        }
         .tabs {
             display: flex;
             justify-content: center;
@@ -59,29 +62,29 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .crime-list, .info-list { /* info-list もここでスタイル定義 */
+        .crime-list, .info-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .crime-item, .info-item { /* info-item もここでスタイル定義 */
+        .crime-item, .info-item {
             border: 1px solid #ddd;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
             background-color: #fafafa;
         }
-        .crime-item h3, .info-item h3 { /* info-item h3 もここでスタイル定義 */
+        .crime-item h3, .info-item h3 {
             margin-top: 0;
             margin-bottom: 10px;
             color: #0056b3;
             font-size: 20px;
         }
-        .crime-item p, .info-item p { /* info-item p もここでスタイル定義 */
+        .crime-item p, .info-item p {
             margin: 0;
             font-size: 16px;
         }
-        .crime-item p.location, .info-item p.location { /* info-item p.location もここでスタイル定義 */
+        .crime-item p.location, .info-item p.location {
             font-weight: bold;
         }
         .info-section {
@@ -157,7 +160,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>犯罪情報</h1>
+        <h1>VRP S2 犯罪情報</h1>
         
         <div class="tabs">
             <button class="tab-button active" onclick="showTab('tab1')">クラフト台</button>
@@ -175,16 +178,16 @@
                     <h2>犯罪道具</h2>
                 </div>
                 <div class="item-card" onclick="showImage('8.png')">
-                    <img src="8.png" alt="武器クラフト(Mk.2)">
-                    <h2>武器クラフト(Mk.2)</h2>
+                    <img src="8.png" alt="武器(Mk.2)">
+                    <h2>武器(Mk.2)</h2>
                 </div>
                 <div class="item-card" onclick="showImage('9.png')">
-                    <img src="9.png" alt="武器クラフト(AR)">
-                    <h2>武器クラフト(AR)</h2>
+                    <img src="9.png" alt="武器(AR)">
+                    <h2>武器(AR)</h2>
                 </div>
                 <div class="item-card" onclick="showImage('10.png')">
-                    <img src="10.png" alt="武器クラフト(Pistol・SMG)">
-                    <h2>武器クラフト(Pistol・SMG)</h2>
+                    <img src="10.png" alt="武器(Pistol・SMG)">
+                    <h2>武器(Pistol・SMG)</h2>
                 </div>
                 <div class="item-card" onclick="showImage('11.png')">
                     <img src="11.png" alt="弾＆武器パーツ">
@@ -373,10 +376,9 @@
             }
         }
         
-        // 犯罪別詳細用の検索関数
-        function searchCrime(tabId) {
+        function searchCrime() {
             const input = document.getElementById('crimeSearch').value.toLowerCase();
-            const items = document.querySelectorAll('#' + tabId + ' .crime-item');
+            const items = document.querySelectorAll('.crime-item');
             
             items.forEach(item => {
                 const text = item.textContent.toLowerCase();
@@ -388,10 +390,9 @@
             });
         }
         
-        // その他情報用の検索関数
-        function searchInfo(tabId) {
+        function searchInfo() {
             const input = document.getElementById('infoSearch').value.toLowerCase();
-            const sections = document.querySelectorAll('#' + tabId + ' .info-section');
+            const sections = document.querySelectorAll('.info-section');
             
             sections.forEach(section => {
                 const text = section.textContent.toLowerCase();
