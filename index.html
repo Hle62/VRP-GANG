@@ -34,32 +34,27 @@
         .header-title-container {
             display: flex;
             align-items: center;
-            /* ロゴとタイトルを左寄せにする */
-            justify-content: flex-start;
-            position: relative;
+            justify-content: center; /* 中のコンテンツを中央に寄せる */
             padding-top: 20px;
             padding-bottom: 20px;
-            /* 全体を少し内側に寄せる */
-            padding-left: 20px; 
+        }
+        /* ロゴとタイトルをまとめるコンテナ */
+        .header-content {
+            display: flex;
+            align-items: center;
         }
         .header-title-container h1 {
-            text-align: left; /* 左寄せに変更 */
+            text-align: center; /* 中央揃えのまま */
             color: var(--text-color);
             margin: 0;
             font-size: 2em;
-            padding-left: 0; /* ロゴと並ぶためpadding-leftは不要 */
         }
         #logo-title {
-            /* absoluteを削除し、通常のフローで配置 */
-            position: static; 
-            /* タイトルとの間に余白を設ける */
-            margin-right: 15px; 
-            max-height: 3em; /* ロゴの高さを調整 */
+            position: static; /* 通常のフローに戻す */
+            max-height: 5em; /* 元のサイズに戻す */
             width: auto;
             object-fit: contain;
-            /* topとtransformも不要 */
-            top: auto;
-            transform: none;
+            margin-right: 15px; /* タイトルとの間に余白 */
             padding-left: 0;
         }
         
@@ -294,8 +289,9 @@
 <body>
     <div class="container">
         <div class="header-title-container">
-            <img id="logo-title" src="ChloroCircus-rogo.png" alt="ChloroCircus Logo">
-            <h1>VRP S2 犯罪情報</h1>
+            <div class="header-content"> <img id="logo-title" src="ChloroCircus-rogo.png" alt="ChloroCircus Logo">
+                <h1>VRP S2 犯罪情報</h1>
+            </div>
         </div>
         <div class="neon-line"></div>
         
