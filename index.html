@@ -49,12 +49,7 @@
             height: 2px;
             background-color: var(--neon-green);
             box-shadow: 0 0 5px var(--neon-green);
-            margin: 10px 0 20px 0; /* 見出しの下に適切な余白を確保 */
-        }
-
-        /* crime-item h3 の直下のセクションデバイダ用調整 */
-        .crime-item .section-divider {
-            margin: 5px 0 10px 0; /* 犯罪名と線の間隔を調整 */
+            margin: 5px 0 20px 0; /* 文字との間隔を調整 */
         }
         
         .tabs {
@@ -112,11 +107,10 @@
         }
         .crime-item h3 {
             margin-top: 0;
-            margin-bottom: 0; /* 線の直前に余白ができないように調整 */
+            margin-bottom: 0;
             color: var(--text-color);
             font-size: 20px;
-            /* border-bottom と box-shadow は section-divider に移す */
-            padding-bottom: 0; 
+            padding-bottom: 0;
         }
         .info-item h3 {
             margin-top: 0;
@@ -140,16 +134,16 @@
         }
         .info-section h3 {
             margin-top: 0;
-            margin-bottom: 0; /* section-divider のために余白を調整 */
+            margin-bottom: 0;
             color: var(--text-color);
             font-size: 20px;
-            border-bottom: none; /* 下線を削除 */
             padding-bottom: 5px;
+            border-bottom: none;
         }
         .info-section ul {
             list-style-type: disc;
             padding-left: 20px;
-            margin: 0;
+            margin-top: 20px;
         }
         .info-section li {
             margin-bottom: 10px;
@@ -247,7 +241,7 @@
         </div>
         
         <div id="tab2" class="tab-content">
-            <h2 style="text-align: left; color: var(--text-color);">麻薬精製所</h2>
+            <h2 style="color: var(--text-color); margin-bottom: 0;">麻薬精製所</h2>
             <div class="section-divider"></div>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('1.png')">
@@ -268,7 +262,7 @@
                 </div>
             </div>
             
-            <h2 style="text-align: left; color: var(--text-color); margin-top: 40px;">花</h2>
+            <h2 style="color: var(--text-color); margin-top: 40px; margin-bottom: 0;">花</h2>
             <div class="section-divider"></div>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('5.png')">
