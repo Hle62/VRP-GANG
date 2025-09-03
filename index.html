@@ -29,7 +29,7 @@
             border-radius: 10px;
             overflow: hidden;
         }
-
+        
         /* タイトルとロゴのコンテナ */
         .header-title-container {
             display: flex;
@@ -76,7 +76,7 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px; /* PCでのデフォルト余白 */
+            margin-bottom: 20px;
             gap: 10px;
             border-bottom: 2px solid #333;
             flex-wrap: wrap;
@@ -97,17 +97,14 @@
         }
         .tab-content {
             display: none;
-            padding-top: 20px; /* PCでのデフォルト余白 */
+            padding-top: 20px;
+            opacity: 0; /* フェードアウト用 */
+            transition: opacity 0.5s ease-in-out; /* フェードアニメーション */
         }
         .tab-content.active {
             display: block;
+            opacity: 1; /* フェードイン用 */
         }
-
-        /* PCでの花＆麻薬精製所タブの余白を狭く */
-        #tab2.active {
-            padding-top: 5px;
-        }
-        
         .search-container {
             margin-bottom: 20px;
             text-align: center;
@@ -209,17 +206,17 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.9);
-            display: flex; /* 初期値はflexにしておく */
+            display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            opacity: 0; /* デフォルトで非表示 */
-            transition: opacity 0.3s ease-in-out; /* フェードアニメーション */
-            pointer-events: none; /* 非表示時はクリックイベントを無効に */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
         }
         .overlay.visible {
-            opacity: 1; /* 表示時に完全に不透明 */
-            pointer-events: auto; /* 表示時にクリックイベントを有効に */
+            opacity: 1;
+            pointer-events: auto;
         }
         .overlay-image {
             max-width: 90%;
@@ -263,8 +260,6 @@
             .tab-content {
                 padding-top: 10px;
             }
-
-            /* スマホで花＆麻薬精製所だけ余白を狭く */
             #tab2.active {
                 padding-top: 0;
             }
@@ -498,13 +493,11 @@
             
             enlargedImage.src = imageSrc;
             overlay.classList.add('visible');
-            // opacityが0から1に変化することでフェードイン
         }
 
         function hideImage() {
             const overlay = document.getElementById('overlay');
             overlay.classList.remove('visible');
-            // opacityが1から0に変化することでフェードアウト
         }
         
         function showTab(tabId) {
