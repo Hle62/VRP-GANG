@@ -48,7 +48,6 @@
         .tab-content.active {
             display: block;
         }
-        /* 以下は既存のCSS */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -139,7 +138,38 @@
         </div>
         
         <div id="tab2" class="tab-content">
+            <h2 style="text-align: left; color: #444; border-bottom: 2px solid #ccc; padding-bottom: 5px;">麻薬精製所</h2>
+            <div class="grid-container">
+                <div class="item-card" onclick="showImage('1.png')">
+                    <img src="1.png" alt="7303番地 地下">
+                    <h2>7303番地 地下</h2>
+                </div>
+                <div class="item-card" onclick="showImage('2.png')">
+                    <img src="2.png" alt="2027番地 家地下">
+                    <h2>2027番地 家地下</h2>
+                </div>
+                <div class="item-card" onclick="showImage('3.png')">
+                    <img src="3.png" alt="3026番地 カウンター裏">
+                    <h2>3026番地 カウンター裏</h2>
+                </div>
+                <div class="item-card" onclick="showImage('4.png')">
+                    <img src="4.png" alt="8244番地 右">
+                    <h2>8244番地 右</h2>
+                </div>
             </div>
+            
+            <h2 style="text-align: left; color: #444; border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-top: 40px;">花</h2>
+            <div class="grid-container">
+                <div class="item-card" onclick="showImage('5.png')">
+                    <img src="5.png" alt="[Xeleonica青] 5042番地 右の山頂">
+                    <h2>[Xeleonica青] 5042番地 右の山頂</h2>
+                </div>
+                <div class="item-card" onclick="showImage('6.png')">
+                    <img src="6.png" alt="[Mistica紫] 9386番地 右の孤島">
+                    <h2>[Mistica紫] 9386番地 右の孤島</h2>
+                </div>
+            </div>
+        </div>
 
         <div id="tab3" class="tab-content">
             </div>
@@ -171,14 +201,12 @@
         }
         
         function showTab(tabId) {
-            // すべてのタブボタンとコンテンツを非アクティブにする
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
             
             tabButtons.forEach(button => button.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
             
-            // 選択されたタブとコンテンツをアクティブにする
             const selectedButton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
             const selectedContent = document.getElementById(tabId);
             
