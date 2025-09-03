@@ -29,32 +29,38 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        
+
         /* タイトルとロゴのコンテナ */
         .header-title-container {
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* ロゴとタイトルを左寄せにする */
+            justify-content: flex-start;
             position: relative;
             padding-top: 20px;
             padding-bottom: 20px;
+            /* 全体を少し内側に寄せる */
+            padding-left: 20px; 
         }
         .header-title-container h1 {
-            text-align: center;
+            text-align: left; /* 左寄せに変更 */
             color: var(--text-color);
             margin: 0;
             font-size: 2em;
-            padding-left: 60px;
+            padding-left: 0; /* ロゴと並ぶためpadding-leftは不要 */
         }
         #logo-title {
-            position: absolute;
-            left: 0;
-            max-height: 5em;
+            /* absoluteを削除し、通常のフローで配置 */
+            position: static; 
+            /* タイトルとの間に余白を設ける */
+            margin-right: 15px; 
+            max-height: 3em; /* ロゴの高さを調整 */
             width: auto;
             object-fit: contain;
-            top: 50%;
-            transform: translateY(-50%);
-            padding-left: 20px;
+            /* topとtransformも不要 */
+            top: auto;
+            transform: none;
+            padding-left: 0;
         }
         
         /* ネオンラインのスタイル */
@@ -97,15 +103,18 @@
         }
         .tab-content {
             display: none;
-            padding-top: 20px; /* PCでのデフォルト余白 */
+            /* padding-top: 20px; 個別設定のため削除 */
         }
         .tab-content.active {
             display: block;
         }
 
-        /* PCでの花＆麻薬精製所タブの余白を狭く */
+        /* PCでの個別の余白設定 */
+        #tab1.active, #tab3.active, #tab4.active, #tab5.active, #tab6.active {
+            padding-top: 20px;
+        }
         #tab2.active {
-            padding-top: 5px;
+            padding-top: 5px; /* 花＆麻薬精製所のみ狭く */
         }
         
         .search-container {
@@ -238,6 +247,7 @@
                 padding-top: 10px;
                 padding-bottom: 10px;
                 flex-wrap: wrap;
+                padding-left: 0; /* スマホでは左寄せしない */
             }
             #logo-title {
                 position: static;
@@ -523,7 +533,7 @@
                 // 新しいタブボタンをアクティブにする
                 selectedButton.classList.add('active');
                 
-                // 新しいタブコンテンツを表示し、フェードイン
+                // 新しいタブコンテンツを表示
                 selectedContent.classList.add('active');
             }
         }
