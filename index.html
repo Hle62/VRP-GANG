@@ -34,28 +34,26 @@
         .header-title-container {
             display: flex;
             align-items: center;
-            justify-content: center; /* タイトルを中央に配置 */
-            position: relative; /* 子要素の絶対配置の基準 */
+            justify-content: center;
+            position: relative;
             padding-top: 20px;
-            padding-bottom: 20px; /* 必要に応じて調整 */
+            padding-bottom: 20px;
         }
-
         .header-title-container h1 {
-            text-align: center; /* h1自体のテキスト中央寄せ */
+            text-align: center;
             color: var(--text-color);
-            margin: 0; /* 親要素で余白を調整するため */
-            font-size: 2em; /* タイトル文字のサイズをさらに小さく */
+            margin: 0;
+            font-size: 2em;
         }
-
         #logo-title {
             position: absolute;
-            left: 0; /* 親コンテナの左端 */
-            max-height: 5em; /* ロゴのサイズをさらに大きく */
-            width: auto; /* アスペクト比を維持 */
-            object-fit: contain; /* 画像全体を表示 */
+            left: 0;
+            max-height: 5em;
+            width: auto;
+            object-fit: contain;
             top: 50%;
-            transform: translateY(-50%); /* 垂直方向中央寄せ */
-            padding-left: 20px; /* コンテナの端からの余白 */
+            transform: translateY(-50%);
+            padding-left: 20px;
         }
         
         /* ネオンラインのスタイル */
@@ -71,7 +69,7 @@
             height: 2px;
             background-color: var(--neon-green);
             box-shadow: 0 0 5px var(--neon-green);
-            margin: 5px 0 20px 0; /* 文字との間隔を調整 */
+            margin: 5px 0 20px 0;
         }
         
         .tabs {
@@ -80,6 +78,7 @@
             margin-bottom: 20px;
             gap: 10px;
             border-bottom: 2px solid #333;
+            flex-wrap: wrap; /* スマホでタブが複数行になるように */
         }
         .tab-button {
             padding: 10px 20px;
@@ -216,6 +215,46 @@
             max-height: 90%;
             box-shadow: 0 0 20px var(--neon-green);
             border: 2px solid var(--neon-green);
+        }
+
+        /* --- スマートフォン用のスタイル --- */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .header-title-container {
+                flex-direction: column; /* ロゴとタイトルを縦並びにする */
+                align-items: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            #logo-title {
+                position: static; /* 絶対位置指定を解除 */
+                max-height: 3em; /* ロゴサイズを小さく */
+                transform: none; /* 垂直方向中央寄せを解除 */
+                padding-left: 0;
+                margin-bottom: 10px;
+            }
+            .header-title-container h1 {
+                font-size: 1.5em; /* タイトル文字を小さく */
+            }
+            .tabs {
+                flex-wrap: wrap;
+                justify-content: flex-start; /* 左寄せに */
+                gap: 5px;
+            }
+            .tab-button {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 2列に */
+                gap: 10px;
+            }
+            .item-card img {
+                width: 100%; /* 親要素いっぱいに広げる */
+                max-width: 150px;
+            }
         }
     </style>
 </head>
