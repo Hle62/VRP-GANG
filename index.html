@@ -29,7 +29,7 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        
+
         /* タイトルとロゴのコンテナ */
         .header-title-container {
             display: flex;
@@ -76,7 +76,7 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* PCでのデフォルト余白 */
             gap: 10px;
             border-bottom: 2px solid #333;
             flex-wrap: wrap;
@@ -96,15 +96,23 @@
             border-bottom: 2px solid var(--neon-green);
         }
         .tab-content {
-            display: none;
-            padding-top: 20px;
-            opacity: 0; /* フェードアウト用 */
-            transition: opacity 0.5s ease-in-out; /* フェードアニメーション */
+            /* display: none; を削除 */
+            padding-top: 20px; /* PCでのデフォルト余白 */
+            opacity: 0;
+            visibility: hidden; /* 非表示時に要素を隠す */
+            transition: opacity 0.5s ease-in-out;
         }
         .tab-content.active {
             display: block;
-            opacity: 1; /* フェードイン用 */
+            opacity: 1;
+            visibility: visible; /* 表示時に要素を見せる */
         }
+
+        /* PCでの花＆麻薬精製所タブの余白を狭く */
+        #tab2.active {
+            padding-top: 5px;
+        }
+        
         .search-container {
             margin-bottom: 20px;
             text-align: center;
@@ -504,15 +512,23 @@
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
             
-            tabButtons.forEach(button => button.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
+            // 現在のタブを非表示にする
+            const currentActiveContent = document.querySelector('.tab-content.active');
+            if (currentActiveContent) {
+                currentActiveContent.classList.remove('active');
+            }
             
+            // 新しいタブとコンテンツをアクティブにする
             const selectedButton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
             const selectedContent = document.getElementById(tabId);
             
             if (selectedButton && selectedContent) {
                 selectedButton.classList.add('active');
-                selectedContent.classList.add('active');
+                
+                // フェードインのために少し遅延させる
+                setTimeout(() => {
+                    selectedContent.classList.add('active');
+                }, 50); // 50msの遅延
             }
         }
         
