@@ -36,7 +36,7 @@
             padding-top: 20px;
         }
 
-        /* サイト全体のネオン装飾ライン */
+        /* ネオンラインのスタイル */
         .neon-line {
             height: 2px;
             background-color: var(--neon-green);
@@ -105,7 +105,16 @@
             border-radius: 8px;
             background-color: var(--card-background);
         }
-        .crime-item h3, .info-item h3 {
+        .crime-item h3 {
+            margin-top: 0;
+            margin-bottom: 5px; /* テキストと線の間を狭める */
+            color: var(--text-color);
+            font-size: 20px;
+            border-bottom: 2px solid var(--neon-green); /* 発光する下線を追加 */
+            padding-bottom: 5px;
+            box-shadow: 0 2px 5px var(--neon-green); /* 発光効果を追加 */
+        }
+        .info-item h3 {
             margin-top: 0;
             margin-bottom: 10px;
             color: var(--text-color);
@@ -130,8 +139,9 @@
             margin-bottom: 15px;
             color: var(--text-color);
             font-size: 20px;
-            border-bottom: none; /* 下線を削除 */
+            border-bottom: 2px solid var(--neon-green);
             padding-bottom: 5px;
+            box-shadow: 0 2px 5px var(--neon-green);
         }
         .info-section ul {
             list-style-type: disc;
@@ -234,8 +244,7 @@
         </div>
         
         <div id="tab2" class="tab-content">
-            <h2 style="text-align: left; color: var(--text-color);">麻薬精製所</h2>
-            <div class="section-divider"></div>
+            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; box-shadow: 0 2px 5px var(--neon-green);">麻薬精製所</h2>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('1.png')">
                     <img src="1.png" alt="7303番地 地下">
@@ -255,8 +264,7 @@
                 </div>
             </div>
             
-            <h2 style="text-align: left; color: var(--text-color); margin-top: 40px;">花</h2>
-            <div class="section-divider"></div>
+            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; margin-top: 40px; box-shadow: 0 2px 5px var(--neon-green);">花</h2>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('5.png')">
                     <img src="5.png" alt="[Xeleonica青] 5042番地 右の山頂">
@@ -355,7 +363,6 @@
             </div>
             <div class="info-section">
                 <h3>ギャング設立条件</h3>
-                <div class="section-divider"></div>
                 <ul>
                     <li>最低人数7人</li>
                     <li>資金1億</li>
@@ -370,7 +377,6 @@
             
             <div class="info-section">
                 <h3>車両の窃盗場所</h3>
-                <div class="section-divider"></div>
                 <ul>
                     <li>車: カジノ前</li>
                     <li>ヘリ: 10098番地先端</li>
