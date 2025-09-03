@@ -44,7 +44,7 @@
             color: var(--text-color);
             margin: 0;
             font-size: 2em;
-            padding-left: 60px; /* ロゴの幅と余白を考慮して調整 */
+            padding-left: 60px;
         }
         #logo-title {
             position: absolute;
@@ -76,7 +76,7 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* タブの下の余白を修正 */
             gap: 10px;
             border-bottom: 2px solid #333;
             flex-wrap: wrap;
@@ -97,7 +97,7 @@
         }
         .tab-content {
             display: none;
-            padding-top: 20px;
+            padding-top: 10px; /* タブコンテンツの上の余白を修正 */
         }
         .tab-content.active {
             display: block;
@@ -224,22 +224,21 @@
                 padding: 10px;
             }
             .header-title-container {
-                /* flex-direction: column; を削除 */
-                justify-content: center; /* タイトル全体を中央に */
+                justify-content: center;
                 padding-top: 10px;
                 padding-bottom: 10px;
-                flex-wrap: wrap; /* 必要に応じて改行を許可 */
+                flex-wrap: wrap;
             }
             #logo-title {
-                position: static; /* 絶対位置指定を解除 */
+                position: static;
                 max-height: 3em;
                 transform: none;
                 padding-left: 0;
-                margin-right: 10px; /* タイトルとの間隔 */
+                margin-right: 10px;
             }
             .header-title-container h1 {
                 font-size: 1.5em;
-                padding-left: 0; /* PC版のpadding-leftをリセット */
+                padding-left: 0;
             }
             .tabs {
                 flex-wrap: wrap;
