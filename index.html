@@ -13,27 +13,32 @@
             color: #333;
         }
         .container {
-            max-width: 800px;
+            max-width: 960px;
             margin: auto;
             background: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
         .item-card {
             border: 1px solid #ddd;
             padding: 15px;
-            margin-bottom: 20px;
             border-radius: 8px;
             background-color: #fafafa;
             text-align: center;
         }
         .item-card h2 {
+            font-size: 16px;
             margin-top: 10px;
             margin-bottom: 0;
             color: #0056b3;
         }
         .item-card img {
-            max-width: 100%;
+            width: 150px;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -44,39 +49,33 @@
 <body>
     <div class="container">
         <h1>武器クラフトレシピ一覧</h1>
-
-        <div class="item-card">
-            <img src="7.png" alt="犯罪道具">
-            <h2>犯罪道具</h2>
+        
+        <div class="grid-container">
+            <div class="item-card">
+                <img src="7.png" alt="犯罪道具">
+                <h2>犯罪道具</h2>
+            </div>
+            <div class="item-card">
+                <img src="8.png" alt="武器クラフト(Mk.2)">
+                <h2>武器クラフト(Mk.2)</h2>
+            </div>
+            <div class="item-card">
+                <img src="9.png" alt="武器クラフト(AR)">
+                <h2>武器クラフト(AR)</h2>
+            </div>
+            <div class="item-card">
+                <img src="10.png" alt="武器クラフト(Pistol・SMG)">
+                <h2>武器クラフト(Pistol・SMG)</h2>
+            </div>
+            <div class="item-card">
+                <img src="11.png" alt="弾＆武器パーツ">
+                <h2>弾＆武器パーツ</h2>
+            </div>
+            <div class="item-card">
+                <img src="12.png" alt="アタッチメント">
+                <h2>アタッチメント</h2>
+            </div>
         </div>
-
-        <div class="item-card">
-            <img src="8.png" alt="武器クラフト(Mk.2)">
-            <h2>武器クラフト(Mk.2)</h2>
-        </div>
-
-        <div class="item-card">
-            <img src="9.png" alt="武器クラフト(AR)">
-            <h2>武器クラフト(AR)</h2>
-        </div>
-
-        <div class="item-card">
-            <img src="10.png" alt="武器クラフト(Pistol・SMG)">
-            <h2>武器クラフト(Pistol・SMG)</h2>
-        </div>
-
-        <div class="item-card">
-            <img src="11.png" alt="弾＆武器パーツ">
-            <h2>弾＆武器パーツ</h2>
-        </div>
-
-        <div class="item-card">
-            <img src="12.png" alt="アタッチメント">
-            <h2>アタッチメント</h2>
-        </div>
-
     </div>
 </body>
-
 </html>
-
