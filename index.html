@@ -8,7 +8,7 @@
         :root {
             --dark-background: #121212;
             --card-background: #1e1e1e;
-            --text-color: #e0e0e0; /* テキスト色を白に近い色に戻す */
+            --text-color: #e0e0e0;
             --neon-green: #39ff14;
         }
 
@@ -31,7 +31,7 @@
         }
         h1 {
             text-align: center;
-            color: var(--text-color); /* タイトルも白に戻す */
+            color: var(--text-color);
             margin-top: 0;
             padding-top: 20px;
         }
@@ -61,7 +61,7 @@
             transition: color 0.3s, border-bottom 0.3s;
         }
         .tab-button.active {
-            color: var(--neon-green); /* アクティブなタブの文字はネオングリーンのまま */
+            color: var(--neon-green);
             font-weight: bold;
             border-bottom: 2px solid var(--neon-green);
         }
@@ -82,7 +82,7 @@
             font-size: 16px;
             border: 1px solid #555;
             background-color: #333;
-            color: var(--text-color); /* 検索窓の文字も白に戻す */
+            color: var(--text-color);
             border-radius: 5px;
         }
         .crime-list, .info-list {
@@ -100,7 +100,7 @@
         .crime-item h3, .info-item h3 {
             margin-top: 0;
             margin-bottom: 10px;
-            color: var(--text-color); /* 犯罪名の文字も白に戻す */
+            color: var(--text-color);
             font-size: 20px;
         }
         .crime-item p, .info-item p {
@@ -120,7 +120,7 @@
         .info-section h3 {
             margin-top: 0;
             margin-bottom: 15px;
-            color: var(--text-color); /* その他情報の見出しも白に戻す */
+            color: var(--text-color);
             font-size: 20px;
             border-bottom: 2px solid var(--neon-green);
             padding-bottom: 5px;
@@ -150,7 +150,7 @@
             font-size: 16px;
             margin-top: 10px;
             margin-bottom: 0;
-            color: var(--text-color); /* カードのタイトルも白に戻す */
+            color: var(--text-color);
         }
         .item-card img {
             width: 200px;
@@ -226,7 +226,7 @@
         </div>
         
         <div id="tab2" class="tab-content">
-            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px;">麻薬精製所</h2>
+            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; box-shadow: 0 0 5px var(--neon-green);">麻薬精製所</h2>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('1.png')">
                     <img src="1.png" alt="7303番地 地下">
@@ -246,7 +246,7 @@
                 </div>
             </div>
             
-            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; margin-top: 40px;">花</h2>
+            <h2 style="text-align: left; color: var(--text-color); border-bottom: 2px solid var(--neon-green); padding-bottom: 5px; margin-top: 40px; box-shadow: 0 0 5px var(--neon-green);">花</h2>
             <div class="grid-container">
                 <div class="item-card" onclick="showImage('5.png')">
                     <img src="5.png" alt="[Xeleonica青] 5042番地 右の山頂">
